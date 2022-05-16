@@ -20,12 +20,15 @@ public class VerifySearchResluts extends Utils{
 		selectProductCategory("Books");
 		search(searchedBook);
 		verifySearchedResultsCount(searchedBook);
-		//applyFilter("englishFilter");
+		checkResultContainSearchedText(searchedBook);
+		checkLargestBookNameWhichContainSearchedTextAndCharactersLessThan70(searchedBook);
+		applyFilter("englishFilter");
+		verifySearchedResultsCount(searchedBook);
 	}
 	
 	@After	
 	public void exitTest() {
-		//closeBrowser();
+		closeBrowser();
 	}
 	
 }
