@@ -66,6 +66,7 @@ public class Utils {
     
     public static void applyFilter(String filter) throws InterruptedException {
 		click(getProp().getProperty("englishFilter"));
+		System.out.println("Filter Applied");
 	}
     
     public static void search(String searchText) throws InterruptedException {
@@ -114,7 +115,7 @@ public class Utils {
 	public static void checkLargestBookNameWhichContainSearchedTextAndCharactersLessThan70(String searchedText) throws InterruptedException {
 		HashMap<String, Integer> map = new HashMap<>();
 		String largestName ="";
-		System.err.println("***Books containing searched text in the results are below***");
+		System.out.println("***Books containing searched text in the results are below***");
 		for (String st : bks) {
 			System.out.println(st + ", length is " +st.length());
 			map.put(st, st.length());
@@ -130,7 +131,7 @@ public class Utils {
 				break;
 			}
 		}
-		System.err.println("***Largest Name in the List which contain searched text is*** "+largestName+" -length is "+largestName.length());
+		System.out.println("***Largest Name in the List which contain searched text is*** "+largestName+" -length is "+largestName.length());
 		assertTrue(largestName.length() == Collections.max(val));
 		assertTrue(largestName.length()<70);		
 	}
